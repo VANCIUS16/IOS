@@ -29,51 +29,49 @@ potencia(a:2,b:3)
 
 var mesess = ["Enero":1, "Febrero":2, "Marzo":3, "Abril":4, "Mayo":5, "Junio":6, "Julio":7, "Agosto":8, "Septiembre":9, "Octubre":10, "Noviembre":11, "Diciembre":12]
 enum meses {
-    case Enero
-    case Febrero
-    case Marzo
-    case Abril
-    case Mayo
-    case Junio
-    case Julio
-    case Agosto
-    case Septiembre
-    case Octubre
-    case Noviembre
-    case Diciembre
+       case Enero
+       case Febrero
+       case Marzo
+       case Abril
+       case Mayo
+       case Junio
+       case Julio
+       case Agosto
+       case Septiembre
+       case Octubre
+       case Noviembre
+       case Diciembre
 }
-var let Meses: meses
-print("Value of the Month is: (yearMonth).")
 
-func numeroMes(meses:String)-> String{
+func numeroMes(meses:meses)-> meses{
+   
  switch meses{
- case "Enero":
+ case .Enero:
         print(1)
-    case "Febrero":
+ case .Febrero:
         print(2)
-    case "Marzo":
+ case .Marzo:
         print(3)
-    case "Abril":
+ case .Abril:
         print(4)
-    case "Mayo":
+ case .Mayo:
         print(5)
-    case "Junio":
+ case .Junio:
         print(6)
-    case "Julio":
+ case .Julio:
         print(7)
-    case "Agosto":
+ case .Agosto:
         print(8)
-    case "Septiembre":
+ case .Septiembre:
         print(9)
-    case "Octubre":
+ case .Octubre:
         print(10)
-    case "Noviembre":
+ case .Noviembre:
         print(11)
-    case "Diciembre":
+ case .Diciembre:
         print(12)
- default:
-        print("Nada")
   }
+    return meses
 }
-
-numeroMes()
+var mes:meses = .Enero
+numeroMes(meses:mes)
