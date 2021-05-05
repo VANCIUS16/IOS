@@ -8,40 +8,34 @@
 
 import UIKit
 
-
 class NoticiasVC: UITableViewController {
 
     var noticias:[String] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let inset = UIEdgeInsetsMake(60, 0, 0, 0);
-        self.tableView.contentInset = inset
-        self.tableView.scrollIndicatorInsets = inset
-    
         LeerNoticias().getNoticias { (datos) in
             self.noticias = datos
+            self.tableView.reloadData()
         }
-        
-        
     }
-    
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+
+    // MARK: - Table view data source
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        
-        let celda = tableView.dequeueReusableCellWithIdentifier("celda", forIndexPath: indexPath)
-        
-        celda.textLabel!.text = "Cargando..."
-        
-        return celda
-        
+
+    override func tableView( _ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return self.noticias.count
     }
-    
-    
+
+    override func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
+
+        cell.textLabel!.text = self.noticias[indexPath.row]
+
+        return cell
+    }
 }
