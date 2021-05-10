@@ -18,8 +18,8 @@ class GameScene: SKScene
     override func didMove(to view: SKView)
     {
         fondo.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-        num1.position = CGPoint(x: 0, y: -3600)
-        num1.size = CGSize(width: 100, height: 100)
+        num1.position = CGPoint(x: 0, y: -320)
+        num1.size = CGSize(width: 200, height: 200)
         fondo.zPosition = -1
         
         addChild(fondo)
@@ -36,6 +36,6 @@ class GameScene: SKScene
    
     override func update(_ currentTime: CFTimeInterval)
     {
-        num1.position = CGPoint(x: 0, y: -360)
+        num1.position = CGPoint(x: 0, y: -320)
     }
 }
