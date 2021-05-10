@@ -11,7 +11,9 @@ import SpriteKit
 class GameScene: SKScene
 {
     let fondo = SKSpriteNode(imageNamed: "fondo2")
-    let num1 = SKSpriteNode(imageNamed: "Spaceship")
+    //let num1 = SKSpriteNode(imageNamed: "Spaceship")
+    var num1 = SKSpriteNode(imageNamed: "flash")
+    let flash2 = SKSpriteNode(imageNamed: "flash 2")
     
     override func didMove(to view: SKView)
     {
@@ -26,8 +28,10 @@ class GameScene: SKScene
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        num1.run(SKAction.move(to: CGPoint(x: 0, y: fondo.size.height), duration: 0.05))
+        num1.texture = SKTexture(imageNamed: "flash 2")
+        num1.run(SKAction.move(to: CGPoint(x: 0, y: fondo.size.height), duration: 5))
         self.num1.position = CGPoint.zero
+        
     }
    
     override func update(_ currentTime: CFTimeInterval)
